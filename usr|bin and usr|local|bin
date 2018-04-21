@@ -1,0 +1,20 @@
+//The difference between usr/bin  and usr/local/bin  on Linux.
+//author:zhehong
+//date:2018-4-21
+
+No.1:
+GUN下面绝大部分应用的编译系统都是用automake,
+于是乎，你看到的很多很多应用都安装在了/usr/local/目录下.
+
+No.2:
+注意usr 指 Unix System Resource，而不是User!!!
+
+No.3:
+通常/usr/bin下面的都是系统预装的可执行程序，会随着系统升级而改变
+/usr/local/bin目录是给用户放置自己的可执行程序的地方，推荐放在这里，不会被系统升级而覆盖同名文件.
+
+No.4:
+如果两个目录下有相同的可执行程序，谁优先执行受到PATH环境变量的影响，用命令行查询可知目录的优先级.
+echo $PATH 
+/usr/lib64/qt-3.3/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/sbin:/home/dean/bin 
+这里/usr/local/bin优先于/usr/bin,
