@@ -1,0 +1,11 @@
+//record the difference between update and upgrade,though which both are the command in linux
+//author:zhehong
+//date:2018-7-2
+
+1、update是更新软件列表，upgrade是更新软件
+2、apt-get update
+   指令会同步使用者端和APT伺服器的RPM索引清单（package list），APT 伺服器的RPM 索引清单置于base 资料夹内，
+使用者端电脑取得base 资料夹内的bz2 RPM 索引清单压缩档后，会将其解压置放于/var/state/apt/lists/.
+3、apt-get upgrade
+ 使用者使用apt-get install 或apt-get dist-upgrade 指令的时候，就会将这个资料夹内的资料和使用者端电脑内的RPM资料库比对，
+如此一来就可以知道那些RPM 已安装、未安装、或是可以升级的.
