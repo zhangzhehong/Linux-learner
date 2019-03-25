@@ -1,0 +1,5 @@
+1.查看显卡型号：lspci|grep VGA
+(lspci是linux查看硬件信息的命令)，屏幕会打印出主机的集显及独显信息
+
+2.查看nvidia芯片信息：lspci|grep -i nvidia
+会打印出nvidia系列的硬件信息，如果主机安装了没有视频输出的GPU（如tesla系列），这个命令会很有用
