@@ -1,0 +1,10 @@
+Solution 1:by add-apt
+    sudo add-apt-repository ppa:v-launchpad-jochen-sprickerhof-de/pcl
+    sudo apt-get update
+    sudo apt-get install libpcl-all
+    
+Solution 2:by apt-get-install
+    sudo apt-get install libpcl-dev pcl-tools
+    
+Solution 2:by download source and cmake
+ view https://blog.csdn.net/unlimitedai/article/details/86314464
