@@ -1,0 +1,4 @@
+1.在使用ubuntu16.04的时候，有时会出现界面卡住，点击鼠标和键盘都没有反应的情况下，需要进行的操作如下：
+step 1：按住 “Ctrl + Alt + F1” 进入字符界面终端
+step 2：输入命令 “ sudo pkill Xorg” or "sudo service lightdm restart"
+step 3:wiat for a second!Everything will be ok!
