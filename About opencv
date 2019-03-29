@@ -1,0 +1,2 @@
+Q：在下载opencv3.2后，进行预处理的时候会卡在ICV数据包下载这儿
+A:解决办法：https://blog.csdn.net/qq_42517195/article/details/80834655
