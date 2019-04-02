@@ -1,5 +1,8 @@
 Q1：将.mp4格式视频全部分解成图片帧
-A1：
+A1：ffmpeg -i  ./test/video.mpg -r 1 -f image2 temp/%05d.png
+[note]1、-r 1 表示按照每秒获取一帧的方式（可修改）
+      2、%05d 表示按照五位数字递增的方式
+      
 
 Q2：将全部图片帧合成视频
 A2：ffmpeg -f image2 -i %*.jpeg -c:v libx264 -r 5 -b 100k out.mp4
@@ -8,6 +11,7 @@ A2：ffmpeg -f image2 -i %*.jpeg -c:v libx264 -r 5 -b 100k out.mp4
        3、-b 100k 表示每秒传输速率100k
        
 
-Q3：剪切视频
+Q3：剪切特定时间段视频
 A3：ffmpeg -ss 10 -t 15 -i test.mp4 -codec copy cut.mp4
 refference：https://blog.csdn.net/matrix_laboratory/article/details/53157383
+
