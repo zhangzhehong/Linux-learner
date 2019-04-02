@@ -9,9 +9,10 @@ A2：ffmpeg -f image2 -i %*.jpeg -c:v libx264 -r 5 -b 100k out.mp4
 [note]:1、图片集合中图片的名称从0或者1开始
        2、-r 5 表示每秒5帧图片
        3、-b 100k 表示每秒传输速率100k
-       
+reference:https://blog.csdn.net/summermaoz/article/details/73098584    
+
 
 Q3：剪切特定时间段视频
 A3：ffmpeg -ss 10 -t 15 -i test.mp4 -codec copy cut.mp4
-refference：https://blog.csdn.net/matrix_laboratory/article/details/53157383
+reference：https://blog.csdn.net/matrix_laboratory/article/details/53157383
 
