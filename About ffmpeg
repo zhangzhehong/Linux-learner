@@ -16,3 +16,6 @@ Q3：剪切特定时间段视频
 A3：ffmpeg -ss 10 -t 15 -i test.mp4 -codec copy cut.mp4
 reference：https://blog.csdn.net/matrix_laboratory/article/details/53157383
 
+Q4：flv格式转mp4格式
+A4： ffmpeg -i  dahuaxiyou.flv -c:v libx264 -strict -2 dahuaxiyou.mp4
+
