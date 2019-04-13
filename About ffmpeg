@@ -6,6 +6,7 @@ A1：ffmpeg -i  ./test/video.mpg -r 1 -f image2 temp/%05d.png
 
 Q2：将全部图片帧合成视频
 A2：ffmpeg -f image2 -i %0d.jpeg -c:v libx264 -r 5 -b 100k out.mp4
+ffmpeg  -f image2 -i imagename%04d.jpg -vcodec libx264 -crf 15 -pix_fmt yuv420p output_filename.mp4
 [note]:1、图片集合中图片的名称从0或者1开始
        2、-r 5 表示每秒5帧图片
        3、-b 100k 表示每秒传输速率100k
