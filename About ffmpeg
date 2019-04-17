@@ -13,9 +13,13 @@ ffmpeg  -r 5 -f image2 -i imagename%04d.jpg -vcodec libx264 -crf 10 -pix_fmt yuv
 reference:https://blog.csdn.net/summermaoz/article/details/73098584    
 
 
-Q3：剪切特定时间段视频
+Q3：剪切特定时间段视频为图片
 A3：ffmpeg -ss 10 -t 15 -i test.mp4 -codec copy cut.mp4
+ffmpeg -ss 00:02:13.55 -to 00:02:26 -i yangmi2.mp4 -f image2 -r 25 -q:v 2 cut3/%0d.jpg
 reference：https://blog.csdn.net/matrix_laboratory/article/details/53157383
+[note]:1、-t 表示时间
+       2、-to 表示截止时间
+       3、-q:v 表示高质量图片
 
 Q4：flv格式转mp4格式
 A4： ffmpeg -i  dahuaxiyou.flv -c:v libx264 -strict -2 dahuaxiyou.mp4
