@@ -1,0 +1,51 @@
+1、总体方案：U盘iSO镜像安装Ubuntu18.04 + UEFI安装(使Ubuntu系统和windows系统并存在引导文件中) + 自主分区(/、/home)
+
+2、安装工具：(1)一个空U盘8G；
+            (2)一个制作Ubuntu系统安装盘的工具rufus(ubuntu官网推荐https://rufus.ie/)；
+            (3)一段未分配的磁盘空间Windows系统下(作者这里准备的是250G的固态)
+
+3、安装步骤：(1)准备好未分配的空白磁盘空间250G
+                ->windows系统下点击进入磁盘管理
+                 ->选择想要分割空间给Ubuntu的盘
+                  ->点击右键压缩卷
+                   ->选择分割空间
+                    ->不用新建卷
+                     ->得到未分配区域
+            (2)制作Ubuntu系统安装盘
+                ->进入Ubuntu官网https://ubuntu.com/download/alternative-downloads下载Ubuntu18.04.iso.torrent
+                 ->双击torrent文件下载iso镜像文件，此时的文件是种子文件，并不是真正的iso,直接双击torrent文件，会自动弹出使用迅雷下载的界面，点击下载即可
+                  ->进入https://rufus.ie/网站下载当前版的.exe文件
+                   ->将准备好的空白U盘插入电脑
+                    ->点击运行rufus的.exe文件
+                     ->选择分区方案和目标系统类型(UEFI+GPT方案 查看电脑磁盘分区方式：->进入电脑的磁盘管理->任选一个磁盘点击右键->点击属性->点击卷->查看磁盘分区形式)
+                      ->点击开始(开始制作系统盘)
+            (3)关闭电脑安全启动选项
+                  ->重启电脑
+                   ->长按F2(华为Matebook13,不同电脑可以查询快捷键)进入BIOS界面
+                    ->找到boot并进入
+                     ->找到secureBoot并进入
+                      ->修改secureBoot属性为disable,其他都不修改
+                       ->保存退出
+            (4)插入制作好的U盘重启电脑
+                 ->按住F12进入Bootloader
+                  ->在UEFI option下 找到自己U盘并点击进入
+                   ->点击install ubuntu
+                    ->选择语言，点击continue
+                     ->选择键盘布局，点击continue
+                      ->updates and others software界面：选择normal installation ,并勾选install third-party software,再点击continue
+                       ->installation type: 选择something else,再点击continue
+                        ->(自定义分区:/)选择分区中的free space --- 点击左下角 + 号 --- 弹出窗口选择size、primary、beginning of this space、mount point :/ --- 其他不修改,点击OK.
+                         ->(自定义分区：/home) 选择分区中剩余的free space --- 点击左下角 + 号 --- 弹出窗口选择size、primary、beginning of this space、mount point :/home --- 其他不修改,点击OK.
+                          ->(选择引导分区)选择分区中的windows boot manager --- 选择device for boot loader的下拉菜单中的Windows boot manager
+                           ->设置完成，点击install now.
+                            ->弹出窗口询问是否写入硬盘,点击continue.
+                             ->地点选择 shanghai,点击continue.
+                              ->设置用户名、设备名称、密码，点击continue.
+                               ->进入安装界面，等待安装
+                                ->安装完成后，弹窗询问是否重启，点击 resart now.
+                                 ->安装结束。
+
+4、参考博文网址
+https://blog.csdn.net/xrinosvip/article/details/80428133?utm_medium=distribute.pc_relevant.none-task-blog-title-14&spm=1001.2101.3001.4242
+           
+           
